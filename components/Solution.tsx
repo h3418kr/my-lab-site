@@ -12,35 +12,35 @@ const papers = [
         journal: "Chemical Engineering Journal",
         year: "2023",
         citations: "121",
-        link: "#"
+        link: "https://doi.org/10.1016/j.cej.2022.139435"
     },
     {
         title: "Polypyrrole-MXene supported gold nanoparticles for nitrofurantoin detection",
         journal: "Chemical Engineering Journal",
         year: "2023",
         citations: "67",
-        link: "#"
+        link: "https://doi.org/10.1016/j.cej.2022.139980"
     },
     {
         title: "Palladium nanoparticles anchored MoS2-MXene composite",
         journal: "Chemical Engineering Journal",
         year: "2023",
         citations: "50",
-        link: "#"
+        link: "https://doi.org/10.1016/j.cej.2023.144017"
     },
     {
         title: "Realizing superior redox kinetics of metal-metal carbides/carbon",
         journal: "Chemical Engineering Journal",
         year: "2023",
         citations: "49",
-        link: "#"
+        link: "https://doi.org/10.1016/j.cej.2022.140246"
     },
     {
         title: "Recent progress in functional nanomaterials towards tritium storage/separation",
         journal: "Advanced Materials",
         year: "2023",
         citations: "46",
-        link: "#"
+        link: "https://doi.org/10.1002/adma.202301589"
     }
 ];
 
@@ -114,10 +114,14 @@ export default function Solution() {
                         >
                             <div className="flex justify-between items-start mb-4">
                                 <span className="text-brand-lime text-sm font-mono">{paper.year}</span>
-                                <ArrowUpRight className="text-gray-500 group-hover:text-brand-cyan transition-colors" />
+                                <a href={paper.link} target="_blank" rel="noopener noreferrer" className="block">
+                                    <ArrowUpRight className="text-gray-500 group-hover:text-brand-cyan transition-colors cursor-pointer" />
+                                </a>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-brand-cyan transition-colors">
-                                {paper.title}
+                                <a href={paper.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                    {paper.title}
+                                </a>
                             </h3>
                             <div className="flex justify-between items-center text-gray-400 font-light text-sm">
                                 <span>{paper.journal}</span>

@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BookOpen, Star } from 'lucide-react';
+import { BookOpen, Star, ExternalLink } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +19,8 @@ export default function Publications() {
             role: "Co-First Author",
             citations: "-",
             impact: "~8",
-            tags: ["Cesium Removal", "Adsorption", "Environmental"]
+            tags: ["Cesium Removal", "Adsorption", "Environmental"],
+            url: "https://www.sciencedirect.com/science/article/pii/S0045653524019465"
         },
         {
             title: "Recovery of Li from seawater using Li1.33Mn1.67O4 immobilized multi-stage column system",
@@ -28,7 +29,8 @@ export default function Publications() {
             role: "Co-First Author",
             citations: "-",
             impact: "~9",
-            tags: ["Lithium Recovery", "Seawater Mining", "Resource Recovery"]
+            tags: ["Lithium Recovery", "Seawater Mining", "Resource Recovery"],
+            url: "https://doi.org/10.1016/j.desal.2024.117656"
         },
         {
             title: "MXene: An emerging two-dimensional layered material for removal of radioactive pollutants",
@@ -37,7 +39,8 @@ export default function Publications() {
             role: "First Author",
             citations: "203",
             impact: "~13",
-            tags: ["Radioactive Removal", "MXene", "Environmental"]
+            tags: ["Radioactive Removal", "MXene", "Environmental"],
+            url: "https://doi.org/10.1016/j.cej.2020.125428"
         },
         {
             title: "An aqueous high-performance hybrid supercapacitor with MXene and polyoxometalates electrodes",
@@ -46,7 +49,8 @@ export default function Publications() {
             role: "First Author",
             citations: "106",
             impact: "~13",
-            tags: ["Supercapacitor", "Energy Storage", "MXene"]
+            tags: ["Supercapacitor", "Energy Storage", "MXene"],
+            url: "https://doi.org/10.1016/j.cej.2021.131854"
         }
     ];
 
@@ -116,7 +120,7 @@ export default function Publications() {
                         <div
                             key={index}
                             ref={addToRefs}
-                            className="group relative p-8 rounded-2xl bg-neutral-800/50 border border-neutral-700/50 hover:border-brand-cyan/50 transition-all duration-300 hover:shadow-neon hover:-translate-y-1"
+                            className="group relative p-8 rounded-2xl bg-neutral-800/50 border border-neutral-600 hover:border-brand-cyan/50 transition-all duration-300 hover:shadow-neon hover:-translate-y-1"
                         >
                             <div className="absolute top-4 right-4 flex gap-2">
                                 <span className="px-3 py-1 text-xs font-bold text-brand-dark bg-brand-lime rounded-full">IF {pub.impact}</span>
@@ -127,7 +131,19 @@ export default function Publications() {
                             </div>
 
                             <h3 className="text-xl font-bold text-white mb-4 leading-relaxed group-hover:text-brand-cyan transition-colors">
-                                {pub.title}
+                                {pub.url ? (
+                                    <a
+                                        href={pub.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline flex items-center gap-2 inline-flex"
+                                    >
+                                        {pub.title}
+                                        <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    </a>
+                                ) : (
+                                    pub.title
+                                )}
                             </h3>
 
                             <div className="flex flex-wrap gap-2 mb-6">

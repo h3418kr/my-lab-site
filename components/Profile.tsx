@@ -49,24 +49,26 @@ export default function Profile() {
         },
         {
             period: "2022 ~ 2023",
-            title: "인하대학교 나노바이오하이테크소재 연구소 연구원",
-            icon: <Briefcase className="w-6 h-6" />
+            title: "인하대학교 첨단소재공정공학 연구교수",
+            icon: <GraduationCap className="w-6 h-6" />
+        },
+        {
+            period: "2018 ~ 2022",
+            title: "인하대학교 첨단소재공정공학 박사후연구원",
+            icon: <GraduationCap className="w-6 h-6" />
         }
     ];
 
     return (
-        <section ref={sectionRef} className="relative py-24 px-4 bg-gradient-to-b from-black via-neutral-950 to-black overflow-hidden">
-            {/* Background Effects */}
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-cyan/30 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-lime/30 rounded-full blur-3xl"></div>
-            </div>
+        <section ref={sectionRef} className="relative py-24 px-4 bg-black overflow-hidden">
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-brand-dark/20 to-black pointer-events-none"></div>
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-white mb-4">
-                        프로필 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-lime">Profile</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-lime">Profile</span>
                     </h2>
                     <div className="h-1 w-24 bg-gradient-to-r from-brand-cyan to-brand-lime mx-auto rounded-full"></div>
                 </div>

@@ -49,12 +49,7 @@ export default function Profile() {
         },
         {
             period: "2022 ~ 2023",
-            title: "인하대학교 첨단소재공정공학 연구교수",
-            icon: <GraduationCap className="w-6 h-6" />
-        },
-        {
-            period: "2018 ~ 2022",
-            title: "인하대학교 첨단소재공정공학 박사후연구원",
+            title: "인하대학교 나노바이오하이테크소재 연구소 연구원",
             icon: <GraduationCap className="w-6 h-6" />
         }
     ];

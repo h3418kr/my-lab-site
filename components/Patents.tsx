@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Patents() {
     const containerRef = useRef<HTMLElement>(null);
     const headerRef = useRef<HTMLDivElement>(null);
-    const cardsRef = useRef<HTMLDivElement[]>([]);
+    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     const patents = [
         {
@@ -59,7 +59,7 @@ export default function Patents() {
                 }
             );
 
-            cardsRef.current.forEach((card, index) => {
+            cardsRef.current.filter(Boolean).forEach((card, index) => {
                 gsap.fromTo(card,
                     { y: 30, opacity: 0 },
                     {
@@ -79,15 +79,9 @@ export default function Patents() {
         return () => ctx.revert();
     }, []);
 
-    const addToRefs = (el: HTMLDivElement | null) => {
-        if (el && !cardsRef.current.includes(el)) {
-            cardsRef.current.push(el);
-        }
-    };
-
     return (
-        <section ref={containerRef} className="py-24 px-4 bg-brand-dark relative z-10 border-t border-neutral-800">
-            <div className="max-w-7xl mx-auto">
+        <section ref={containerRef} className="py-24 px-4 bg-black relative z-10 border-t border-neutral-800">
+            <div className="max-w-6xl mx-auto">
                 <div ref={headerRef} className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
                     <div>
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-700 bg-gray-800/50 mb-6">
@@ -107,7 +101,7 @@ export default function Patents() {
                     {patents.map((item, index) => (
                         <div
                             key={index}
-                            ref={addToRefs}
+                            ref={(el) => { cardsRef.current[index] = el; }}
                             className="group p-6 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-gray-600 transition-all duration-300 flex flex-col justify-between"
                         >
                             <div>
@@ -115,7 +109,6 @@ export default function Patents() {
                                     <span className={`px-2 py-1 text-xs font-bold rounded uppercase ${item.status === '특허등록' ? 'bg-brand-cyan/20 text-brand-cyan' : 'bg-yellow-500/20 text-yellow-500'}`}>
                                         {item.status}
                                     </span>
-                                    {/* Date removed as requested */}
                                 </div>
                                 <h3 className="text-lg font-bold text-white mb-3 text-balance line-clamp-4 group-hover:text-gray-200 transition-colors whitespace-pre-line">
                                     {item.title}

@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Awards() {
     const containerRef = useRef<HTMLElement>(null);
     const headerRef = useRef<HTMLDivElement>(null);
-    const cardsRef = useRef<HTMLDivElement[]>([]);
+    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     const awards = [
         {
@@ -36,7 +36,7 @@ export default function Awards() {
                 }
             );
 
-            cardsRef.current.forEach((card, index) => {
+            cardsRef.current.filter(Boolean).forEach((card, index) => {
                 gsap.fromTo(card,
                     { y: 30, opacity: 0 },
                     {
@@ -56,15 +56,9 @@ export default function Awards() {
         return () => ctx.revert();
     }, []);
 
-    const addToRefs = (el: HTMLDivElement | null) => {
-        if (el && !cardsRef.current.includes(el)) {
-            cardsRef.current.push(el);
-        }
-    };
-
     return (
         <section ref={containerRef} className="py-24 px-4 bg-black relative z-10 border-t border-neutral-800">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto px-4">
                 <div ref={headerRef} className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
                     <div>
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-700 bg-gray-800/50 mb-6">
@@ -81,13 +75,13 @@ export default function Awards() {
                     {awards.map((item, index) => (
                         <div
                             key={index}
-                            ref={addToRefs}
+                            ref={(el) => { cardsRef.current[index] = el; }}
                             className="group p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-brand-cyan/50 transition-all duration-500 backdrop-blur-sm relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                                 <Award className="w-24 h-24 text-brand-cyan" />
                             </div>
-                            
+
                             <div className="relative z-10">
                                 <div className="flex items-center gap-3 mb-6">
                                     <span className="px-3 py-1 text-xs font-bold rounded-full bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">

@@ -13,24 +13,14 @@ export default function Publications() {
 
     const publications = [
         {
-            title: "Engineering the photocatalytic performance of B-C3N4@ Bi2S3 hybrid heterostructures for full‐spectrum‐driven Cr (VI) reduction and in-situ H2O2 generation: Experimental and DFT studies",
-            journal: "Chemical Engineering Journal",
-            year: "2023",
-            role: "Co-Author",
-            citations: "120",
-            impact: "~16.7",
-            tags: ["Photocatalysis", "H2O2 Generation", "DFT Studies"],
-            url: "https://doi.org/10.1016/j.cej.2022.139435"
-        },
-        {
-            title: "Prospects of using nanotechnology for food preservation, safety, and security",
-            journal: "Journal of Food and Drug Analysis",
-            year: "2018",
-            role: "Co-Author",
-            citations: "588",
-            impact: "~6.1",
-            tags: ["Nanotechnology", "Food Safety", "Review"],
-            url: "https://doi.org/10.1016/j.jfda.2018.06.011"
+            title: "Self-assembling nanocomposites for smart drug delivery: towards personalized and stimuli-responsive therapeutics",
+            journal: "RSC Advances",
+            year: "2026",
+            role: "Corresponding Author",
+            citations: "-",
+            impact: "~4.6",
+            tags: ["Nanocomposites", "Drug Delivery", "Stimuli-Responsive"],
+            url: "https://pubs.rsc.org/en/content/articlelanding/2026/ra/d5ra07117h"
         },
         {
             title: "Efficient sequestration of cesium ions using phosphoric acid-modified activated carbon fibers from aqueous solutions",
@@ -140,7 +130,7 @@ export default function Publications() {
                         <div
                             key={index}
                             ref={(el) => { cardsRef.current[index] = el; }}
-                            className="group relative p-8 rounded-2xl bg-neutral-800/50 border border-neutral-800 hover:border-brand-cyan/50 transition-all duration-300 hover:shadow-neon hover:-translate-y-1"
+                            className="group relative p-8 rounded-2xl bg-neutral-800/50 border border-neutral-600 hover:border-brand-cyan/50 transition-all duration-300 hover:shadow-neon hover:-translate-y-1"
                         >
                             <div className="absolute top-4 right-4 flex gap-2">
                                 <span className="px-3 py-1 text-xs font-bold text-brand-dark bg-brand-lime rounded-full">IF {pub.impact}</span>

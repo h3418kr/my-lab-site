@@ -16,6 +16,8 @@ export default function Publications() {
             title: "Self-assembling nanocomposites for smart drug delivery: towards personalized and stimuli-responsive therapeutics",
             journal: "RSC Advances",
             year: "2026",
+            authors: "Yun Suk Huh, Reza Emadi, Zahra Amiri, Fatemeh Mortazavi Moghadam, Setareh Raoufi, Mahtab Zargar Moradi, Sepideh Asadi, William C. Cho, Jin Hee Park, Anahita Voosough, Marzieh Ramezani Farani, Seung-Kyu Hwang",
+            details: "Vol. 16, Issue 6, pp. 5088-5127",
             role: "Corresponding Author",
             citations: "-",
             impact: "~4.6",
@@ -137,7 +139,15 @@ export default function Publications() {
                             </div>
 
                             <div className="mb-4">
-                                <span className="text-brand-cyan text-sm font-medium">{pub.journal} • {pub.year}</span>
+                                <span className="text-brand-cyan text-sm font-medium">
+                                    {pub.journal} • {pub.year}
+                                    {(pub as any).details && ` • ${(pub as any).details}`}
+                                </span>
+                                {(pub as any).authors && (
+                                    <p className="text-gray-400 text-xs mt-2 leading-relaxed">
+                                        {(pub as any).authors}
+                                    </p>
+                                )}
                             </div>
 
                             <h3 className="text-xl font-bold text-white mb-4 leading-relaxed group-hover:text-brand-cyan transition-colors">

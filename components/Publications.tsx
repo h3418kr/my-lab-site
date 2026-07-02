@@ -25,6 +25,30 @@ export default function Publications() {
             url: "https://pubs.rsc.org/en/content/articlelanding/2026/ra/d5ra07117h"
         },
         {
+            title: "Light-controlled CRISPR–dCas9 epigenome editing: advanced drug-delivery strategies and oncology applications",
+            journal: "Advanced Drug Delivery Reviews",
+            year: "2026",
+            authors: "Yun Suk Huh, Naiyereh Alipour Eskandani, Danial Mirzaee, Marzieh Ramezani Farani, Afrooz Hatami, Mohsen Hatami, Maryam Ghasemzaei, Seyed Majid Ghoreishian, Seung-Kyu Hwang",
+            details: "p. 115921",
+            role: "Corresponding Author",
+            citations: "-",
+            impact: "~16.3",
+            tags: ["CRISPR", "Epigenome Editing", "Drug Delivery"],
+            url: ""
+        },
+        {
+            title: "Thermal exfoliation-deposition method for morphology-controlled fabrication of 2D-g-C3N4/CuO heterojunctions: efficient photocatalytic degradation of carbendazim and methylene blue",
+            journal: "Carbon Letters",
+            year: "2026",
+            authors: "Pandian Lakshmanan, Cheol Hwan Kwak, Vaidhyanathan Lavanya, Balamurugan Sumithra, Jae-Seung Roh, Vadivel Saravanan, Nallasamy Palanisami, Seung Kyu Hwang",
+            details: "Vol. 36, Issue 3, pp. 1403-1416",
+            role: "Corresponding Author",
+            citations: "-",
+            impact: "~7.2",
+            tags: ["Photocatalysis", "g-C3N4/CuO", "Degradation"],
+            url: ""
+        },
+        {
             title: "Efficient sequestration of cesium ions using phosphoric acid-modified activated carbon fibers from aqueous solutions",
             journal: "Chemosphere",
             year: "2024",

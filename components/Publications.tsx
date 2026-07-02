@@ -32,9 +32,9 @@ export default function Publications() {
             details: "p. 115921",
             role: "Corresponding Author",
             citations: "-",
-            impact: "~16.3",
+            impact: "~21",
             tags: ["CRISPR", "Epigenome Editing", "Drug Delivery"],
-            url: ""
+            url: "https://doi.org/10.1016/j.addr.2026.115921"
         },
         {
             title: "Thermal exfoliation-deposition method for morphology-controlled fabrication of 2D-g-C3N4/CuO heterojunctions: efficient photocatalytic degradation of carbendazim and methylene blue",
